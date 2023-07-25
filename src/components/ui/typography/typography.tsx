@@ -29,5 +29,7 @@ export function Typography<T extends ElementType = 'p'>(
 
   const classNames = `${s.text} ${s[variant]} ${className}`
 
+  const f = 5
+
   return <Component className={classNames} {...rest} />
 }
