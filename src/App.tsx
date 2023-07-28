@@ -1,7 +1,14 @@
 import { useState } from 'react'
 
 import { Logout } from './assets/icons/iconLogOut.tsx'
-import { Button, itemTabType, SliderBar, TabPanel, TextField } from './components/ui'
+import {
+  Button,
+  CheckboxUniversal,
+  itemTabType,
+  SliderBar,
+  TabPanel,
+  TextField,
+} from './components/ui'
 
 export function App() {
   //1
@@ -45,6 +52,19 @@ export function App() {
     alert(
       'Универсальная кнопка имеено для того чтоб на нее кликать, поэтому можете не стеснятся и смело продолжать, Все настроено и работает и ничего не сломается'
     )
+  }
+  //5
+  //CHECKBOX
+  const checkboxText = 'Некоторый текст'
+  const [valueCheckboxTrue, setValueCheckboxTrue] = useState(true)
+  /*    const [valueCheckboxFalse,setValueCheckboxFalse] = useState(false)*/
+
+  const handlerOnChangeCheckbox = (value: boolean) => {
+    setValueCheckboxTrue(value)
+  }
+  const [valueCheckboxFalse, setValueCheckboxFalse] = useState(false)
+  const handlerOnChangeCheckbox1 = (value: boolean) => {
+    setValueCheckboxFalse(value)
   }
 
   return (
@@ -101,6 +121,21 @@ export function App() {
         <Button>
           <Logout width="23" height="23" /> Hello
         </Button>
+      </div>
+      {/*CheckboxUniversal*/}
+      <div>
+        <CheckboxUniversal
+          disabled={false}
+          checkboxText={checkboxText}
+          onChange={handlerOnChangeCheckbox}
+          value={valueCheckboxTrue}
+        />
+        <CheckboxUniversal
+          disabled={false}
+          checkboxText={checkboxText}
+          onChange={handlerOnChangeCheckbox1}
+          value={valueCheckboxFalse}
+        />
       </div>
     </div>
   )
