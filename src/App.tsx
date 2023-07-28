@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import { itemTabType, SliderBar, TabPanel, TextField } from './components/ui'
+import { Logout } from './assets/icons/iconLogOut.tsx'
+import { Button, itemTabType, SliderBar, TabPanel, TextField } from './components/ui'
 
 export function App() {
   //1
@@ -38,6 +39,13 @@ export function App() {
     { id: 'tab2', name: 'All', onClick: handlerTabPanel2, disabled: false },
     { id: 'tab3', name: 'Трейтья', onClick: handlerTabPanel3, disabled: false },
   ]
+  //4
+  //BUTTON
+  const handlerOnClickButton = () => {
+    alert(
+      'Универсальная кнопка имеено для того чтоб на нее кликать, поэтому можете не стеснятся и смело продолжать, Все настроено и работает и ничего не сломается'
+    )
+  }
 
   return (
     <div>
@@ -79,6 +87,20 @@ export function App() {
       <div>
         {/* TabPanel*/}
         <TabPanel active={active} data={dataTabPanel} title="Title" />
+      </div>
+      {/*Button*/}
+      <div>
+        <Button onClick={handlerOnClickButton}>Hello</Button>
+
+        <Button variant={'secondary'}>Hello</Button>
+
+        <Button variant={'tertiary'}>Hello</Button>
+
+        <Button variant={'link'}>Hello</Button>
+
+        <Button>
+          <Logout width="23" height="23" /> Hello
+        </Button>
       </div>
     </div>
   )
