@@ -5,6 +5,7 @@ import {
   Button,
   CheckboxUniversal,
   itemTabType,
+  SelectControl,
   SliderBar,
   TabPanel,
   TextField,
@@ -65,6 +66,18 @@ export function App() {
   const [valueCheckboxFalse, setValueCheckboxFalse] = useState(false)
   const handlerOnChangeCheckbox1 = (value: boolean) => {
     setValueCheckboxFalse(value)
+  }
+  //6
+  //SELECT
+  const stateSelectItems = [
+    { value: '11', text: 'Apple' },
+    { value: '22', text: 'Banana' },
+    { value: '33', text: 'AppleAndBanana' },
+  ]
+  let widthBlockSelector = 200
+  let headerSelector = 'ВыбратьЧтоТо'
+  const handlerOnValueChange = (value: string | undefined) => {
+    alert(value ? value : 'underfined')
   }
 
   return (
@@ -135,6 +148,15 @@ export function App() {
           checkboxText={checkboxText}
           onChange={handlerOnChangeCheckbox1}
           value={valueCheckboxFalse}
+        />
+      </div>
+      {/*SelectControl*/}
+      <div>
+        <SelectControl
+          onValueChange={handlerOnValueChange}
+          headerSelector={headerSelector}
+          widthBlockSelector={widthBlockSelector}
+          stateSelectItems={stateSelectItems}
         />
       </div>
     </div>
