@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { TextField } from './components/ui'
+import { SliderBar, TextField } from './components/ui'
 
 export function App() {
   const [valueInput, setValueInput] = useState('')
@@ -8,6 +8,11 @@ export function App() {
   console.log(valueInput, 'valueInput')
   const handlerSendInputValue = (valueInput: string) => {
     alert(valueInput)
+  }
+  //SIDER
+  const startArrayValue = [1, 100]
+  const handlerOnValueCommit = (value: number[]) => {
+    alert(`Вы поставили левый ползунок на ${value[0]}  а правый на ${value[1]}`)
   }
 
   return (
@@ -42,6 +47,10 @@ export function App() {
             type="text"
           />
         </div>
+      </div>
+      {/* Slider*/}
+      <div style={{ padding: '15 rem' }}>
+        <SliderBar onValueCommit={handlerOnValueCommit} startArrayValue={startArrayValue} />
       </div>
     </div>
   )
