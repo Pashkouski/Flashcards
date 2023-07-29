@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Logout } from './assets/icons/iconLogOut.tsx'
 import {
   Button,
+  CardComponent,
   CheckboxUniversal,
   itemTabType,
   SelectControl,
@@ -158,6 +159,9 @@ export function App() {
           widthBlockSelector={widthBlockSelector}
           stateSelectItems={stateSelectItems}
         />
+      </div>
+      <div>
+        <CardComponent></CardComponent>
       </div>
     </div>
   )
