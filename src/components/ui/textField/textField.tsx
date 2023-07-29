@@ -64,7 +64,7 @@ export const TextField = (props: PropsInputBaseType) => {
   }
 
   return (
-    <>
+    <div>
       {label && <div className={st.label}>{label}</div>}
 
       <div className={error ? st.error : st.blockIconInput}>
@@ -86,6 +86,6 @@ export const TextField = (props: PropsInputBaseType) => {
         {type === 'password' && <IconEye className={st.iconEye} onClick={handlerIconEye} />}
       </div>
       {error && <div className={st.textError}>{error}</div>}
-    </>
+    </div>
   )
 }
