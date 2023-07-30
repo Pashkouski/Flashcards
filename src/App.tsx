@@ -1,6 +1,17 @@
 import { useState } from 'react'
 
-import { itemTabType, SliderBar, TabPanel, TextField } from './components/ui'
+import { Logout } from './assets/icons/iconLogOut.tsx'
+import {
+  Button,
+  CardComponent,
+  Checkbox2,
+  CheckboxUniversal,
+  itemTabType,
+  SelectControl,
+  SliderBar,
+  TabPanel,
+  TextField,
+} from './components/ui'
 
 export function App() {
   //1
@@ -38,6 +49,38 @@ export function App() {
     { id: 'tab2', name: 'All', onClick: handlerTabPanel2, disabled: false },
     { id: 'tab3', name: 'Трейтья', onClick: handlerTabPanel3, disabled: false },
   ]
+  //4
+  //BUTTON
+  const handlerOnClickButton = () => {
+    alert(
+      'Универсальная кнопка имеено для того чтоб на нее кликать, поэтому можете не стеснятся и смело продолжать, Все настроено и работает и ничего не сломается'
+    )
+  }
+  //5
+  //CHECKBOX
+  const checkboxText = 'Некоторый текст'
+  const [valueCheckboxTrue, setValueCheckboxTrue] = useState(true)
+  /*    const [valueCheckboxFalse,setValueCheckboxFalse] = useState(false)*/
+
+  const handlerOnChangeCheckbox = (value: boolean) => {
+    setValueCheckboxTrue(value)
+  }
+  const [valueCheckboxFalse, setValueCheckboxFalse] = useState(false)
+  const handlerOnChangeCheckbox1 = (value: boolean) => {
+    setValueCheckboxFalse(value)
+  }
+  //6
+  //SELECT
+  const stateSelectItems = [
+    { value: '11', text: 'Apple' },
+    { value: '22', text: 'Banana' },
+    { value: '33', text: 'AppleAndBanana' },
+  ]
+  let widthBlockSelector = 200
+  let headerSelector = 'ВыбратьЧтоТо'
+  const handlerOnValueChange = (value: string | undefined) => {
+    alert(value ? value : 'underfined')
+  }
 
   return (
     <div>
@@ -79,6 +122,61 @@ export function App() {
       <div>
         {/* TabPanel*/}
         <TabPanel active={active} data={dataTabPanel} title="Title" />
+      </div>
+      {/*Button*/}
+      <div>
+        <Button onClick={handlerOnClickButton}>Hello</Button>
+
+        <Button variant={'secondary'}>Hello</Button>
+
+        <Button variant={'tertiary'}>Hello</Button>
+
+        <Button variant={'link'}>Hello</Button>
+
+        <Button>
+          <Logout width="23" height="23" /> Hello
+        </Button>
+      </div>
+      {/*CheckboxUniversal*/}
+      <div>
+        <CheckboxUniversal
+          disabled={false}
+          checkboxText={checkboxText}
+          onChange={handlerOnChangeCheckbox}
+          value={valueCheckboxTrue}
+        />
+        <CheckboxUniversal
+          disabled={false}
+          checkboxText={checkboxText}
+          onChange={handlerOnChangeCheckbox1}
+          value={valueCheckboxFalse}
+        />
+      </div>
+      {/*SelectControl*/}
+      <div>
+        <SelectControl
+          onValueChange={handlerOnValueChange}
+          headerSelector={headerSelector}
+          widthBlockSelector={widthBlockSelector}
+          stateSelectItems={stateSelectItems}
+        />
+      </div>
+      <div>
+        <CardComponent></CardComponent>
+      </div>
+      <div>
+        <Checkbox2
+          disabled={true}
+          label={'disabled'}
+          checked={valueCheckboxTrue}
+          onChangeChecked={setValueCheckboxTrue}
+        />
+        <Checkbox2
+          disabled={false}
+          label={'checkbox'}
+          checked={valueCheckboxTrue}
+          onChangeChecked={setValueCheckboxTrue}
+        />
       </div>
     </div>
   )

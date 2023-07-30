@@ -6,7 +6,7 @@ import * as Label from '@radix-ui/react-label'
 
 import { Typography } from '../typography'
 
-import s from './checkbox.module.scss'
+import s from './checkbox2.module.scss'
 
 type CheckboxProps = {
   checked?: boolean
@@ -18,7 +18,7 @@ type CheckboxProps = {
   required?: boolean
 }
 
-export const Checkbox: FC<CheckboxProps> = ({
+export const Checkbox2: FC<CheckboxProps> = ({
   checked,
   onChangeChecked,
   disabled,

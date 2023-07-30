@@ -1,10 +1,10 @@
 import { StoryObj } from '@storybook/react'
 
-import { Checkbox } from './'
+import { Checkbox2 } from './'
 
 const meta = {
-  title: 'Components/Checkbox',
-  component: Checkbox,
+  title: 'Components/Checkbox2',
+  component: Checkbox2,
   tags: ['autodocs'],
 }
 
