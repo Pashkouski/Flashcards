@@ -13,8 +13,8 @@ export function App() {
       Hello
       <Typography variant={'body2'}>Lorem ipsum dolor sit amet.</Typography>
       <Checkbox
-        onChange={onChangeHandlerCheckbox}
-        value={value}
+        onChangeChecked={onChangeHandlerCheckbox}
+        checked={value}
         disabled={false}
         label={'dsadasdsadsa'}
         className={'test'}

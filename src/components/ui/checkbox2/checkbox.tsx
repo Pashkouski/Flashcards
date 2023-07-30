@@ -9,8 +9,8 @@ import { Typography } from '../typography'
 import s from './checkbox.module.scss'
 
 type CheckboxProps = {
-  value?: boolean
-  onChange?: (value: boolean) => void
+  checked?: boolean
+  onChangeChecked?: (value: boolean) => void
   disabled?: boolean
   label?: string
   id?: string
@@ -19,8 +19,8 @@ type CheckboxProps = {
 }
 
 export const Checkbox: FC<CheckboxProps> = ({
-  value,
-  onChange,
+  checked,
+  onChangeChecked,
   disabled,
   label,
   id,
@@ -30,10 +30,9 @@ export const Checkbox: FC<CheckboxProps> = ({
   const classNames = {
     container: `${s.container} ${className}`,
     label: `${s.label} ${disabled && s.disabled}`,
-    buttonWrapper: `${s.buttonWrapper} ${disabled && s.disabled}`,
-    root: s.CheckboxRoot,
-    indicator: s.indicator,
+    checkedWrapper: `${s.checkedWrapper} ${disabled && s.disabled}`,
     checkboxRoot: `${s.CheckboxRoot} ${disabled && s.disabled}`,
+    indicator: s.indicator,
   }
 
   return (
@@ -41,19 +40,21 @@ export const Checkbox: FC<CheckboxProps> = ({
       <div className={classNames.container}>
         <Label.Root asChild>
           <Typography variant="body2" className={classNames.label} as={'label'}>
-            <CheckboxRadix.Root
-              className={classNames.checkboxRoot}
-              defaultChecked
-              checked={value}
-              onCheckedChange={onChange}
-              disabled={disabled}
-              required={required}
-              id={id}
-            >
-              <CheckboxRadix.Indicator className="CheckboxIndicator">
-                <CheckIcon className={classNames.label} />
-              </CheckboxRadix.Indicator>
-            </CheckboxRadix.Root>
+            <div className={classNames.checkedWrapper}>
+              <CheckboxRadix.Root
+                className={classNames.checkboxRoot}
+                defaultChecked
+                checked={checked}
+                onCheckedChange={onChangeChecked}
+                disabled={disabled}
+                required={required}
+                id={id}
+              >
+                <CheckboxRadix.Indicator className={classNames.indicator}>
+                  <CheckIcon />
+                </CheckboxRadix.Indicator>
+              </CheckboxRadix.Root>
+            </div>
             {label}
           </Typography>
         </Label.Root>
