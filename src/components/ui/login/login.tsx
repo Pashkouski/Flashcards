@@ -23,9 +23,12 @@ export const Login = () => {
 
   return (
     <form onSubmit={handleSubmit(handlerOnSubmit)}>
-      <CardComponent>
-        <Typography variant="large">Sing In</Typography>
+      <CardComponent className={st.common}>
+        <Typography className={st.singIn} variant="large">
+          Sing In
+        </Typography>
         <ControlTextField
+          sizeWidthTextField="21.75rem"
           label="email"
           placeholder="Email"
           type="email"
@@ -33,6 +36,7 @@ export const Login = () => {
           control={control}
         />
         <ControlTextField
+          sizeWidthTextField="21.75rem"
           label="password"
           placeholder="Password"
           type="password"
@@ -46,7 +50,9 @@ export const Login = () => {
         <Button type={'submit'} fullWidth={true}>
           Sing Up
         </Button>
-        <Typography variant="body2">Don&rsquo;t have an account?</Typography>
+        <Typography className={st.text} variant="body2">
+          Don&rsquo;t have an account?
+        </Typography>
         <Typography className={st.singUp} variant="subtitle1">
           <Link to={'/'}>Sing Up</Link>
         </Typography>
