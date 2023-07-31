@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom'
+
 import { Logout } from './assets/icons/iconLogOut.tsx'
 import {
   Button,
@@ -7,6 +9,8 @@ import {
   Checkbox2,
   CheckboxUniversal,
   itemTabType,
+  Login,
+  Register,
   SelectControl,
   SliderBar,
   TabPanel,
@@ -87,6 +91,8 @@ export function App() {
       <div>
         <div>
           <TextField
+            sizeWidthTextField="30rem"
+            className={'sizeWidthTextField'}
             handlerOnChange={handlerSendInputValue}
             valueInput={valueInput}
             setValueInput={setValueInput}
@@ -133,6 +139,10 @@ export function App() {
 
         <Button variant={'link'}>Hello</Button>
 
+        <Button as="a" href="http://www.staggeringbeauty.com/" target="_blank" variant={'link'}>
+          накрути червяка
+        </Button>
+
         <Button>
           <Logout width="23" height="23" /> Hello
         </Button>
@@ -177,6 +187,24 @@ export function App() {
           checked={valueCheckboxTrue}
           onChangeChecked={setValueCheckboxTrue}
         />
+      </div>
+
+      <div>
+        <div>
+          <NavLink to={'/login'}>нажми и перейди на login</NavLink>
+        </div>
+        <div>
+          <NavLink to={'/register'}>нажми и перейди на register</NavLink>
+        </div>
+
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+
+          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="*" element={<Navigate to="/404" />} />
+          <Route path="/404" element={<h2>404: СТРАНИЦА НЕ НАЙДЕНА...ОШИБКА!</h2>} />
+        </Routes>
       </div>
     </div>
   )
