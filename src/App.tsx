@@ -1,4 +1,32 @@
-import { useState } from 'react'
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom'
+
+import { Login, Register } from './components/ui'
+
+export function App() {
+  return (
+    <div>
+      <div>
+        <NavLink to={'/login'}>нажми и перейди на login</NavLink>
+      </div>
+      <div>
+        <NavLink to={'/register'}>нажми и перейди на register</NavLink>
+      </div>
+
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+
+        <Route path="/" element={<Navigate to="/register" />} />
+        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="/404" element={<h2>404: СТРАНИЦА НЕ НАЙДЕНА...ОШИБКА!</h2>} />
+      </Routes>
+    </div>
+  )
+}
+
+/*import { useState } from 'react'
+
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom'
 
 import { Logout } from './assets/icons/iconLogOut.tsx'
 import {
@@ -7,6 +35,8 @@ import {
   Checkbox2,
   CheckboxUniversal,
   itemTabType,
+  Login,
+  Register,
   SelectControl,
   SliderBar,
   TabPanel,
@@ -60,7 +90,7 @@ export function App() {
   //CHECKBOX
   const checkboxText = 'Некоторый текст'
   const [valueCheckboxTrue, setValueCheckboxTrue] = useState(true)
-  /*    const [valueCheckboxFalse,setValueCheckboxFalse] = useState(false)*/
+  /!*    const [valueCheckboxFalse,setValueCheckboxFalse] = useState(false)*!/
 
   const handlerOnChangeCheckbox = (value: boolean) => {
     setValueCheckboxTrue(value)
@@ -117,15 +147,15 @@ export function App() {
           />
         </div>
       </div>
-      {/* Slider*/}
+      {/!* Slider*!/}
       <div>
         <SliderBar onValueCommit={handlerOnValueCommit} startArrayValue={startArrayValue} />
       </div>
       <div>
-        {/* TabPanel*/}
+        {/!* TabPanel*!/}
         <TabPanel active={active} data={dataTabPanel} title="Title" />
       </div>
-      {/*Button*/}
+      {/!*Button*!/}
       <div>
         <Button onClick={handlerOnClickButton}>Hello</Button>
 
@@ -143,7 +173,7 @@ export function App() {
           <Logout width="23" height="23" /> Hello
         </Button>
       </div>
-      {/*CheckboxUniversal*/}
+      {/!*CheckboxUniversal*!/}
       <div>
         <CheckboxUniversal
           disabled={false}
@@ -158,7 +188,7 @@ export function App() {
           value={valueCheckboxFalse}
         />
       </div>
-      {/*SelectControl*/}
+      {/!*SelectControl*!/}
       <div>
         <SelectControl
           onValueChange={handlerOnValueChange}
@@ -184,9 +214,27 @@ export function App() {
           onChangeChecked={setValueCheckboxTrue}
         />
       </div>
+
+      <div>
+        <div>
+          <NavLink to={'/login'}>нажми и перейди на login</NavLink>
+        </div>
+        <div>
+          <NavLink to={'/register'}>нажми и перейди на register</NavLink>
+        </div>
+
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+
+          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="*" element={<Navigate to="/404" />} />
+          <Route path="/404" element={<h2>404: СТРАНИЦА НЕ НАЙДЕНА...ОШИБКА!</h2>} />
+        </Routes>
+      </div>
     </div>
   )
-}
+}*/
 
 /*
 export function App() {
