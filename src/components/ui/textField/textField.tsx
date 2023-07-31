@@ -7,6 +7,7 @@ import { IconSearch } from '../../../assets/icons/iconSearch.tsx'
 import st from './textField.module.scss'
 
 export type PropsInputBaseType = {
+  sizeWidthTextField?: string
   label?: string
   type?: 'email' | 'password' | 'text'
   className?: string
@@ -18,6 +19,7 @@ export type PropsInputBaseType = {
 
 export const TextField = (props: PropsInputBaseType) => {
   const {
+    sizeWidthTextField,
     type = 'text',
     label,
     className,
@@ -67,7 +69,10 @@ export const TextField = (props: PropsInputBaseType) => {
     <div>
       {label && <div className={st.label}>{label}</div>}
 
-      <div className={error ? st.error : st.blockIconInput}>
+      <div
+        className={error ? st.error : st.blockIconInput}
+        style={{ maxWidth: sizeWidthTextField }}
+      >
         {type === 'text' && <IconSearch className={st.iconSearch} />}
 
         <input

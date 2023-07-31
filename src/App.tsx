@@ -87,6 +87,8 @@ export function App() {
       <div>
         <div>
           <TextField
+            sizeWidthTextField="30rem"
+            className={'sizeWidthTextField'}
             handlerOnChange={handlerSendInputValue}
             valueInput={valueInput}
             setValueInput={setValueInput}
@@ -132,6 +134,10 @@ export function App() {
         <Button variant={'tertiary'}>Hello</Button>
 
         <Button variant={'link'}>Hello</Button>
+
+        <Button as="a" href="http://www.staggeringbeauty.com/" target="_blank" variant={'link'}>
+          накрути червяка
+        </Button>
 
         <Button>
           <Logout width="23" height="23" /> Hello
