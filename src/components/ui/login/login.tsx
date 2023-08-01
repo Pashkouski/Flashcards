@@ -1,5 +1,7 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+import { z } from 'zod'
 
 import { ControlCheckbox2 } from '../../../common/controlCheckbox2/controlCheckbox2.tsx'
 import { ControlTextField } from '../../../common/controlTextField/controlTextField.tsx'
@@ -9,13 +11,17 @@ import { Typography } from '../typography'
 
 import st from './login.module.scss'
 
-type FormLoginType = {
-  email: string
-  password: string
-  rememberMe: boolean
-}
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(4),
+  rememberMe: z.boolean().default(true),
+})
+
+type FormLoginType = z.infer<typeof loginSchema>
 export const Login = () => {
-  const { handleSubmit, control } = useForm<FormLoginType>()
+  const { handleSubmit, control } = useForm<FormLoginType>({
+    resolver: zodResolver(loginSchema),
+  })
 
   const handlerOnSubmit = (data: any) => {
     console.log(data)
@@ -47,7 +53,7 @@ export const Login = () => {
         <Typography className={st.forgotPassword} variant="body2">
           <Link to={'/'}>Forgot Password?</Link>
         </Typography>
-        <Button type={'submit'} fullWidth={true}>
+        <Button className={st.button} type={'submit'} fullWidth={true}>
           Sing Up
         </Button>
         <Typography className={st.text} variant="body2">
