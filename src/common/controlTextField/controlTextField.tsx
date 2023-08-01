@@ -14,10 +14,11 @@ export const ControlTextField = <T extends FieldValues>({
 }: PropsType<T>) => {
   const {
     field: { value, onChange },
+    fieldState: { error },
   } = useController({
     name,
     control,
   })
 
-  return <TextField value={value} onChange={onChange} {...rest} />
+  return <TextField error={error?.message} value={value} onChange={onChange} {...rest} />
 }

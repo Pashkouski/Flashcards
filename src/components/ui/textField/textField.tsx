@@ -90,7 +90,7 @@ export const TextField = (props: PropsInputBaseType) => {
         )}
         {type === 'password' && <IconEye className={st.iconEye} onClick={handlerIconEye} />}
       </div>
-      {error && <div className={st.textError}>{error}</div>}
+      {error ? <div className={st.textError}>{error}</div> : <br />}
     </div>
   )
 }

@@ -17,8 +17,6 @@ export const ControlCheckbox2 = <T extends FieldValues>({
   } = useController({
     name,
     control,
-    /* @ts-ignore */
-    defaultValue: false,
   })
 
   return <Checkbox2 checked={checked} onChangeChecked={onChangeChecked} {...rest} />

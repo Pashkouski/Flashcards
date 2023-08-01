@@ -21,7 +21,6 @@ export function App() {
   //1
   const [valueInput, setValueInput] = useState('')
 
-  console.log(valueInput, 'valueInput')
   const handlerSendInputValue = (valueInput: string) => {
     alert(valueInput)
   }
@@ -201,7 +200,7 @@ export function App() {
           <Route path="/register" element={<Register />} />
           <Route path="login" element={<Login />} />
 
-          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="*" element={<Navigate to="/404" />} />
           <Route path="/404" element={<h2>404: СТРАНИЦА НЕ НАЙДЕНА...ОШИБКА!</h2>} />
         </Routes>
