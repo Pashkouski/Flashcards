@@ -54,7 +54,7 @@ export const Login = () => {
           <Link to={'/'}>Forgot Password?</Link>
         </Typography>
         <Button className={st.button} type={'submit'} fullWidth={true}>
-          Sing Up
+          Sing In
         </Button>
         <Typography className={st.text} variant="body2">
           Don&rsquo;t have an account?
