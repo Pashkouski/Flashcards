@@ -8,7 +8,7 @@ import { Typography } from '../typography'
 
 import s from './checkbox2.module.scss'
 
-type CheckboxProps = {
+export type CheckboxProps = {
   checked?: boolean
   onChangeChecked?: (value: boolean) => void
   disabled?: boolean

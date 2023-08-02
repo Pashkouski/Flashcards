@@ -22,7 +22,6 @@ export const Login = () => {
   const { handleSubmit, control } = useForm<FormLoginType>({
     resolver: zodResolver(loginSchema),
   })
-
   const handlerOnSubmit = (data: any) => {
     console.log(data)
   }
@@ -51,7 +50,7 @@ export const Login = () => {
         />
         <ControlCheckbox2 label="Remember  me" name="rememberMe" control={control} />
         <Typography className={st.forgotPassword} variant="body2">
-          <Link to={'/'}>Forgot Password?</Link>
+          <Link to={'/forgotYourPassword'}>Forgot Password?</Link>
         </Typography>
         <Button className={st.button} type={'submit'} fullWidth={true}>
           Sing Up

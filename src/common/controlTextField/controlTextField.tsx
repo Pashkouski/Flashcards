@@ -1,11 +1,11 @@
 import { Control, FieldPath, FieldValues, useController } from 'react-hook-form'
 
-import { TextField } from '../../components/ui'
+import { PropsInputBaseType, TextField } from '../../components/ui'
 
 type PropsType<T extends FieldValues> = {
   control: Control<T>
   name: FieldPath<T>
-} & Omit<React.ComponentProps<typeof TextField>, 'onChange' | 'value'>
+} & Omit<PropsInputBaseType, 'onChange' | 'value'>
 
 export const ControlTextField = <T extends FieldValues>({
   control,
@@ -20,5 +20,5 @@ export const ControlTextField = <T extends FieldValues>({
     control,
   })
 
-  return <TextField error={error?.message} value={value} onChange={onChange} {...rest} />
+  return <TextField {...rest} error={error?.message} value={value} onChange={onChange} />
 }
