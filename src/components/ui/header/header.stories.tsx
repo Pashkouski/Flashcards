@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 
 import { AvatarDemo } from '../avatar'
 import { Button } from '../button'
+import { DropdownMenuComponent } from '../drop-down-menu'
 
 import { Header } from './header.tsx'
 
@@ -17,12 +18,6 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const WithAvatar: Story = {
-  args: {
-    children: AvatarDemo(),
-  },
-}
-
 const button = () => {
   return (
     <Button variant={'primary'} style={{ marginLeft: 1500 }}>
@@ -31,6 +26,19 @@ const button = () => {
   )
 }
 
+const DropDown = () => {
+  return (
+    <>
+      <DropdownMenuComponent arrItems={['My Profile', 'Sign Out']} />
+    </>
+  )
+}
+
+export const WithAvatar: Story = {
+  args: {
+    children: DropDown(),
+  },
+}
 export const WithButton: Story = {
   args: {
     children: button(),

@@ -3,7 +3,7 @@ import * as Avatar from '@radix-ui/react-avatar'
 import s from './avatar.module.scss'
 
 export const AvatarDemo = () => (
-  <div style={{ display: 'flex', gap: 20, marginLeft: 1500 }}>
+  <div style={{ display: 'flex', gap: 20 }}>
     <Avatar.Root className={s.AvatarRoot}>
       <Avatar.Image
         className={s.AvatarImage}
