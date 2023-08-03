@@ -6,9 +6,11 @@ import { Checkbox2 } from '../../components/ui/checkbox2'
 type PropsType<T extends FieldValues> = {
   control: Control<T>
   name: FieldPath<T>
+  label: string
 } & Omit<CheckboxProps, 'onChangeChecked' | 'checked'>
 
 export const ControlCheckbox2 = <T extends FieldValues>({
+  label,
   control,
   name,
   ...rest
@@ -20,5 +22,5 @@ export const ControlCheckbox2 = <T extends FieldValues>({
     control,
   })
 
-  return <Checkbox2 {...rest} checked={checked} onChangeChecked={onChangeChecked} />
+  return <Checkbox2 {...rest} checked={checked} onChangeChecked={onChangeChecked} label={label} />
 }
