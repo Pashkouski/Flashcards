@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 26.25rem;
+  height: 21.75rem;
+  padding: 2.06rem 5.25rem 2.56rem;
+}
+
+.iconUser {
+  width: 6rem;
+  height: 6rem;
+}

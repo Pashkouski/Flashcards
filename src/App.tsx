@@ -12,6 +12,7 @@ import {
   ForgotYourPassword,
   itemTabType,
   Login,
+  Profile,
   Register,
   SelectControl,
   SliderBar,
@@ -203,12 +204,16 @@ export function App() {
         <div>
           <NavLink to={'/checkEmail'}>нажми и перейди на CheckEmail</NavLink>
         </div>
+        <div>
+          <NavLink to={'/profile'}>нажми и перейди на Profile</NavLink>
+        </div>
 
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="forgotYourPassword" element={<ForgotYourPassword />} />
           <Route path="checkEmail" element={<CheckEmail />} />
+          <Route path="profile" element={<Profile />} />
 
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="*" element={<Navigate to="/404" />} />
