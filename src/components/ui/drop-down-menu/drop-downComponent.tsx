@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { HamburgerMenuIcon, DotFilledIcon, CheckIcon, PersonIcon } from '@radix-ui/react-icons'
+import { PersonIcon } from '@radix-ui/react-icons'
 
 import { Logout } from '../../../assets/icons/iconLogOut.tsx'
 import { AvatarDemo } from '../avatar'
