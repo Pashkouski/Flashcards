@@ -8,6 +8,7 @@ import {
   CardComponent,
   Checkbox2,
   CheckboxUniversal,
+  CheckEmail,
   ForgotYourPassword,
   itemTabType,
   Login,
@@ -199,11 +200,15 @@ export function App() {
         <div>
           <NavLink to={'/forgotYourPassword'}>нажми и перейди на ForgotYourPassword</NavLink>
         </div>
+        <div>
+          <NavLink to={'/checkEmail'}>нажми и перейди на CheckEmail</NavLink>
+        </div>
 
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="forgotYourPassword" element={<ForgotYourPassword />} />
+          <Route path="checkEmail" element={<CheckEmail />} />
 
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="*" element={<Navigate to="/404" />} />
