@@ -22,7 +22,7 @@ export const Profile = () => {
     )
   }
   const handlerOnClickEditName = () => {
-    navigate('/editNameComponent')
+    navigate('/editProfile')
   }
   const name = 'Ivan'
   const address = 'someadress@mail.ru'
