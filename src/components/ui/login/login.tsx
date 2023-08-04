@@ -53,13 +53,13 @@ export const Login = () => {
           <Link to={'/forgotYourPassword'}>Forgot Password?</Link>
         </Typography>
         <Button className={st.button} type={'submit'} fullWidth={true}>
-          Sing Up
+          Sing In
         </Button>
         <Typography className={st.text} variant="body2">
           Don&rsquo;t have an account?
         </Typography>
         <Typography className={st.singUp} variant="subtitle1">
-          <Link to={'/'}>Sing Up</Link>
+          <Link to={'/register'}>Sing Up</Link>
         </Typography>
       </CardComponent>
     </form>
