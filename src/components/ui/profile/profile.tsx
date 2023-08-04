@@ -41,7 +41,7 @@ export const Profile = () => {
       <Typography className={st.address} variant="body2">
         {address}
       </Typography>
-      <Button onClick={handlerOnClick}>
+      <Button variant={'secondary'} onClick={handlerOnClick}>
         <Logout width="23" height="23" />
         Logout
       </Button>

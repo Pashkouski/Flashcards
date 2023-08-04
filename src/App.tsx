@@ -9,7 +9,7 @@ import {
   Checkbox2,
   CheckboxUniversal,
   CheckEmail,
-  EditNameComponent,
+  EditProfile,
   ForgotYourPassword,
   itemTabType,
   Login,
@@ -209,7 +209,7 @@ export function App() {
           <NavLink to={'/profile'}>нажми и перейди на Profile</NavLink>
         </div>
         <div>
-          <NavLink to={'/editNameComponent'}>нажми и перейди на EditNameComponent</NavLink>
+          <NavLink to={'/editProfile'}>нажми и перейди на EditProfile</NavLink>
         </div>
 
         <Routes>
@@ -218,7 +218,7 @@ export function App() {
           <Route path="forgotYourPassword" element={<ForgotYourPassword />} />
           <Route path="checkEmail" element={<CheckEmail />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="editNameComponent" element={<EditNameComponent />} />
+          <Route path="editProfile" element={<EditProfile />} />
 
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="*" element={<Navigate to="/404" />} />
