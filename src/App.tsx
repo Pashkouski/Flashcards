@@ -16,6 +16,7 @@ import {
   Login,
   Pagination,
   PaginationAndSelect,
+  PaginationSamurai,
   Profile,
   Register,
   SelectControl,
@@ -244,6 +245,9 @@ export function App() {
       </div>
       <div style={{ padding: '8rem' }}>
         <PaginationAndSelect />
+      </div>
+      <div style={{ padding: '12rem' }}>
+        <PaginationSamurai allElements={1200} />
       </div>
     </div>
   )
