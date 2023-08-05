@@ -14,6 +14,7 @@ import {
   ForgotYourPassword,
   itemTabType,
   Login,
+  Pagination,
   Profile,
   Register,
   SelectControl,
@@ -88,6 +89,11 @@ export function App() {
   let headerSelector = 'ВыбратьЧтоТо'
   const handlerOnValueChange = (value: string | undefined) => {
     alert(value ? value : 'underfined')
+  }
+
+  //PAGINATOR
+  const handlerOnChange = (page: number) => {
+    alert(page)
   }
 
   return (
@@ -231,6 +237,9 @@ export function App() {
           <Route path="*" element={<Navigate to="/404" />} />
           <Route path="/404" element={<h2>404: СТРАНИЦА НЕ НАЙДЕНА...ОШИБКА!</h2>} />
         </Routes>
+      </div>
+      <div style={{ padding: '8rem' }}>
+        <Pagination count={1000} page={1} onChange={handlerOnChange} />
       </div>
     </div>
   )
