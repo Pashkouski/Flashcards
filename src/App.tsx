@@ -15,6 +15,7 @@ import {
   itemTabType,
   Login,
   Pagination,
+  PaginationAndSelect,
   Profile,
   Register,
   SelectControl,
@@ -240,6 +241,9 @@ export function App() {
       </div>
       <div style={{ padding: '8rem' }}>
         <Pagination count={1000} page={1} onChange={handlerOnChange} />
+      </div>
+      <div style={{ padding: '8rem' }}>
+        <PaginationAndSelect />
       </div>
     </div>
   )
