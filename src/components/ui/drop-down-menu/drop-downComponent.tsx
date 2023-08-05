@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { PersonIcon } from '@radix-ui/react-icons'
+import { PersonIcon, TrashIcon } from '@radix-ui/react-icons'
 
+import { IconEdit } from '../../../assets/icons/iconEdit.tsx'
 import { Logout } from '../../../assets/icons/iconLogOut.tsx'
+import IconPlayCircle from '../../../assets/icons/LearnIcon.tsx'
+import LearnIcon from '../../../assets/icons/play-circle-outline.svg'
 import { AvatarDemo } from '../avatar'
+import { Typography } from '../typography'
 
 import s from './drop-downComponent.module.scss'
+
+// import { Delete } from 'assets/icons/LearnIcon.tsx'
 
 type DropdownProps = {
   arrItems: Array<string>
@@ -27,14 +33,21 @@ export const DropdownMenuComponent: React.FC<DropdownProps> = ({ arrItems }) => 
         </button>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className={s.DropdownMenuContent} sideOffset={3}>
+        <DropdownMenu.Content
+          className={
+            arrItems.includes('Learn')
+              ? s.DropdownMenuSubContentForItemsCountThree
+              : s.DropdownMenuContent
+          }
+          sideOffset={3}
+        >
           {arrItems.length <= 2 && (
             <div className={s.DropdownMenuItem}>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <AvatarDemo />
                 <div style={{ margin: '10px' }}>
-                  <h3>Ivan</h3>
-                  <h5>ivan@gmail.com</h5>
+                  <Typography variant={'h3'}>Ivan</Typography>
+                  <Typography variant={'body2'}>ivan@gmail.com</Typography>
                 </div>
               </div>
             </div>
@@ -42,12 +55,20 @@ export const DropdownMenuComponent: React.FC<DropdownProps> = ({ arrItems }) => 
           {arrItems.map(e => {
             return (
               <>
-                <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
+                {!e.includes('Learn') && (
+                  <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
+                )}
                 <DropdownMenu.Item className={s.DropdownMenuItem}>
                   {e === 'Sign Out' ? (
                     <Logout style={{ margin: '5px' }} />
                   ) : e === 'My Profile' ? (
                     <PersonIcon style={{ margin: '5px' }} />
+                  ) : e === 'Edit' ? (
+                    <IconEdit style={{ margin: '5px' }} />
+                  ) : e === 'Delete' ? (
+                    <TrashIcon style={{ margin: '5px' }} />
+                  ) : e === 'Learn' ? (
+                    <IconPlayCircle style={{ margin: '5px' }} />
                   ) : null}
                   {e}
                 </DropdownMenu.Item>

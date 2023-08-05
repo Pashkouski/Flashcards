@@ -26,6 +26,24 @@ button {
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.DropdownMenuSubContentForItemsCountThree {
+  will-change: transform, opacity;
+
+  z-index: 10;
+
+  width:140px;
+  padding: 5px;
+
+  background-color: #333;
+  border-radius: 6px;
+  box-shadow:
+          0 10px 38px -10px rgb(22 23 24 / 35%),
+          0 10px 20px -15px rgb(22 23 24 / 20%);
+
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .DropdownMenuContent[data-side='top'],
 .DropdownMenuSubContent[data-side='top'] {
   animation-name: slideDownAndFade;
