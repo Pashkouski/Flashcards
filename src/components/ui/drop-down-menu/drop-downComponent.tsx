@@ -33,7 +33,14 @@ export const DropdownMenuComponent: React.FC<DropdownProps> = ({ arrItems }) => 
         </button>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className={s.DropdownMenuContent} sideOffset={3}>
+        <DropdownMenu.Content
+          className={
+            arrItems.includes('Learn')
+              ? s.DropdownMenuSubContentForItemsCountThree
+              : s.DropdownMenuContent
+          }
+          sideOffset={3}
+        >
           {arrItems.length <= 2 && (
             <div className={s.DropdownMenuItem}>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -48,7 +55,9 @@ export const DropdownMenuComponent: React.FC<DropdownProps> = ({ arrItems }) => 
           {arrItems.map(e => {
             return (
               <>
-                <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
+                {!e.includes('Learn') && (
+                  <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
+                )}
                 <DropdownMenu.Item className={s.DropdownMenuItem}>
                   {e === 'Sign Out' ? (
                     <Logout style={{ margin: '5px' }} />
