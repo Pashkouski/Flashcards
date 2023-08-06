@@ -43,7 +43,7 @@ export const Checkbox2: FC<CheckboxProps> = ({
             <div className={classNames.checkedWrapper}>
               <CheckboxRadix.Root
                 className={classNames.checkboxRoot}
-                defaultChecked
+                defaultChecked={false}
                 checked={checked}
                 onCheckedChange={onChangeChecked}
                 disabled={disabled}
