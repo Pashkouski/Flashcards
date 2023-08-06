@@ -60,7 +60,7 @@ export const Login = () => {
           Don&rsquo;t have an account?
         </Typography>
         <Typography className={st.singUp} variant="subtitle1">
-          <Link to={'/'}>Sing Up</Link>
+          <Link to={'/register'}>Sing Up</Link>
         </Typography>
       </CardComponent>
     </form>

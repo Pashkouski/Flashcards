@@ -80,7 +80,7 @@ export const Register = () => {
           Sing Up
         </Button>
         <Typography className={st.text} variant="body2">
-          Don&rsquo;t have an account?
+          Already have an account?
         </Typography>
         <Typography className={st.singUp} variant="subtitle1">
           <Link to={'/'}>Sing In</Link>
