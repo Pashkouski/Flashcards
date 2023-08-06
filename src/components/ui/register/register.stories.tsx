@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Register } from 'components/ui/register/register.tsx'
+import { Register } from './register.tsx'
 
 const meta = {
   title: 'Components/Register',
