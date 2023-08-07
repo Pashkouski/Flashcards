@@ -6,13 +6,13 @@
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   width: 100%;
-  padding: 0 70px 0 0;
+  padding: 0 70px 0 160px;
   height:100px;
   min-width: 1280px;
 
-  background-color: #234e99;
+  background-color:var(--color-dark-700);
   border-bottom: 1px solid var(--color-bg-dividers);
 }
