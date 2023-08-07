@@ -19,11 +19,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const button = () => {
-  return (
-    <Button variant={'primary'} style={{ marginLeft: 1500 }}>
-      Sign in
-    </Button>
-  )
+  return <Button variant={'primary'}>Sign in</Button>
 }
 
 const DropDown = () => {
@@ -37,10 +33,12 @@ const DropDown = () => {
 export const WithAvatar: Story = {
   args: {
     children: DropDown(),
+    name: true,
   },
 }
 export const WithButton: Story = {
   args: {
     children: button(),
+    name: false,
   },
 }
