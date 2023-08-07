@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { NavLink, Route, Routes, Navigate } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 import { Logout } from './assets/icons/iconLogOut.tsx'
 import {
@@ -8,17 +8,10 @@ import {
   CardComponent,
   Checkbox2,
   CheckboxUniversal,
-  CheckEmail,
-  CreateNewPasswordComponent,
-  EditProfile,
-  ForgotYourPassword,
   itemTabType,
-  Login,
   Pagination,
   PaginationAndSelect,
   PaginationSamurai,
-  Profile,
-  Register,
   SelectControl,
   SliderBar,
   TabPanel,
@@ -225,20 +218,7 @@ export function App() {
             нажми и перейди на CreateNewPasswordComponent
           </NavLink>
         </div>
-
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="login" element={<Login />} />
-          <Route path="forgotYourPassword" element={<ForgotYourPassword />} />
-          <Route path="checkEmail" element={<CheckEmail />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="editProfile" element={<EditProfile />} />
-          <Route path="createNewPasswordComponent" element={<CreateNewPasswordComponent />} />
-
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="*" element={<Navigate to="/404" />} />
-          <Route path="/404" element={<h2>404: СТРАНИЦА НЕ НАЙДЕНА...ОШИБКА!</h2>} />
-        </Routes>
+        <Outlet />
       </div>
       <div style={{ padding: '8rem' }}>
         <Pagination count={1000} page={1} onChange={handlerOnChange} />
