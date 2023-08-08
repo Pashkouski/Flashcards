@@ -33,12 +33,11 @@ const DropDown = () => {
 export const WithAvatar: Story = {
   args: {
     children: DropDown(),
-    name: true,
+    name: 'Ivan',
   },
 }
 export const WithButton: Story = {
   args: {
     children: button(),
-    name: 'Ivan',
   },
 }

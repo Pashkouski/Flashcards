@@ -9,7 +9,7 @@ import im from './Logo.png'
 
 export type HeaderProps = {
   children: ReactNode
-  name: string
+  name?: string
 } & Omit<ComponentProps<'header'>, 'children'>
 
 export const Header: FC<HeaderProps> = ({ children, className, name, ...rest }) => {
