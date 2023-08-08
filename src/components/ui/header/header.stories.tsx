@@ -39,6 +39,6 @@ export const WithAvatar: Story = {
 export const WithButton: Story = {
   args: {
     children: button(),
-    name: false,
+    name: 'Ivan',
   },
 }
