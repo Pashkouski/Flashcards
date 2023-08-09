@@ -179,6 +179,15 @@ export function App() {
             setValueInput={setValueInput}
             placeholder={'Input search'}
             type="text"
+            showIconClose={true}
+          />
+          <TextField
+            handlerOnChange={handlerSendInputValue}
+            valueInput={valueInput}
+            setValueInput={setValueInput}
+            placeholder={'Input search'}
+            type="text"
+            showIconClose={false}
           />
         </div>
       </div>

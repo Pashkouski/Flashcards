@@ -15,10 +15,12 @@ export type PropsInputBaseType = {
   setValueInput?: (valueInput: string) => void
   valueInput?: string
   handlerOnChange?: (valueInput: string) => void
+  showIconClose?: boolean
 } & ComponentPropsWithoutRef<'input'>
 
 export const TextField = (props: PropsInputBaseType) => {
   const {
+    showIconClose,
     sizeWidthTextField,
     type = 'text',
     label,
@@ -85,9 +87,7 @@ export const TextField = (props: PropsInputBaseType) => {
           {...rest}
         />
 
-        {type === 'text' && (
-          <IconClose onClick={handlerOnClickIconClose} className={st.iconClose} />
-        )}
+        {showIconClose && <IconClose onClick={handlerOnClickIconClose} className={st.iconClose} />}
         {type === 'password' && <IconEye className={st.iconEye} onClick={handlerIconEye} />}
       </div>
       {error ? <div className={st.textError}>{error}</div> : <br />}
