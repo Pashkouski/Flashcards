@@ -1,7 +1,5 @@
-import { action } from '@storybook/addon-actions'
 import { Meta, StoryObj } from '@storybook/react'
 
-import { AvatarDemo } from '../avatar'
 import { Button } from '../button'
 import { DropdownMenuComponent } from '../drop-down-menu'
 
