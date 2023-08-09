@@ -14,6 +14,7 @@ import {
   PaginationSamurai,
   SelectControl,
   SliderBar,
+  TableDecks,
   TabPanel,
   TextField,
 } from './components/ui'
@@ -89,6 +90,61 @@ export function App() {
   //PAGINATOR
   const handlerOnChange = (page: number) => {
     alert(page)
+  }
+  //TABLE-DECKS
+  const dataContentTable = [
+    {
+      title: 'Pack Name1',
+      cardsCount: 10,
+      updated: '2023-07-07',
+      createdBy: 'Ivan Ivanov',
+    },
+    {
+      title: 'Pack Name2',
+      cardsCount: 5,
+      updated: '2023-07-06',
+      createdBy: 'Ivan Ivanov',
+    },
+    {
+      title: 'Pack Name3',
+      cardsCount: 8,
+      updated: '2023-07-05',
+      createdBy: 'Ivan Ivanov',
+    },
+    {
+      title: 'Pack Name4',
+      cardsCount: 3,
+      updated: '2023-07-07',
+      createdBy: 'Ivan Ivanov',
+    },
+    {
+      title: 'Pack Name5',
+      cardsCount: 12,
+      updated: '2023-07-04',
+      createdBy: 'Ivan Ivanov',
+    },
+  ]
+
+  const dataHeadersTable = [
+    {
+      key: 'name',
+      title: 'Name',
+    },
+    {
+      key: 'cardsCount',
+      title: 'Cards',
+    },
+    {
+      key: 'updated',
+      title: 'Last Updated',
+    },
+    {
+      key: 'createdBy',
+      title: 'Created by',
+    },
+  ]
+  const sendDataToServer = (value: string) => {
+    alert('sendDataToServer...   ' + value)
   }
 
   return (
@@ -228,6 +284,13 @@ export function App() {
       </div>
       <div style={{ padding: '12rem' }}>
         <PaginationSamurai allElements={1200} />
+      </div>
+      <div style={{ padding: '3rem' }}>
+        <TableDecks
+          dataContentTable={dataContentTable}
+          dataHeadersTable={dataHeadersTable}
+          sendDataToServer={sendDataToServer}
+        />
       </div>
     </div>
   )
