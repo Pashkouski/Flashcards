@@ -1,3 +1,4 @@
+import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
@@ -28,6 +29,7 @@ export const Login = () => {
 
   return (
     <form onSubmit={handleSubmit(handlerOnSubmit)}>
+      <DevTool control={control} />
       <CardComponent className={st.common}>
         <Typography className={st.singIn} variant="large">
           Sing In

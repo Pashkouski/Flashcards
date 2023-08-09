@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { PersonIcon, TrashIcon } from '@radix-ui/react-icons'
@@ -6,7 +6,6 @@ import { PersonIcon, TrashIcon } from '@radix-ui/react-icons'
 import { IconEdit } from '../../../assets/icons/iconEdit.tsx'
 import { Logout } from '../../../assets/icons/iconLogOut.tsx'
 import IconPlayCircle from '../../../assets/icons/LearnIcon.tsx'
-import LearnIcon from '../../../assets/icons/play-circle-outline.svg'
 import { AvatarDemo } from '../avatar'
 import { Typography } from '../typography'
 
