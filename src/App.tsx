@@ -15,6 +15,7 @@ import {
   SelectControl,
   SliderBar,
   TableDecks,
+  TableDecksWithSettings,
   TabPanel,
   TextField,
 } from './components/ui'
@@ -300,6 +301,9 @@ export function App() {
           dataHeadersTable={dataHeadersTable}
           sendDataToServer={sendDataToServer}
         />
+      </div>
+      <div>
+        <TableDecksWithSettings />
       </div>
     </div>
   )
